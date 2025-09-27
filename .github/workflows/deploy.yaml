@@ -5,6 +5,13 @@ on:
       - master
 
 jobs:
+  print-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Secrets
+        run: |
+          echo "DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}"
+          echo "DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}"
   build:
     runs-on: ubuntu-latest
     steps:
